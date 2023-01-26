@@ -1,0 +1,39 @@
+:root {
+    --link: #465cc9;
+
+    --primary: #6c49d5;
+    --secondary: #b43369;
+    --on-primary: #ffffff;
+    --on-secondary: #ffffff;
+
+    --background-primary: #1f1f1f;
+    --background-secondary: #1a1a1a;
+    --background-secondary-transparent: rgba(21, 21, 21, 0.5);
+    --on-background-primary: #fafafa;
+    --on-background-secondary: #f5f5f5;
+    --on-background-shadow: #cbcbcb;
+
+    --surface: #1f1f1f;
+    --on-surface: #ffffff;
+
+    --button: rgba(42, 42, 42, 0);
+    --button-selected: rgba(42, 42, 42, 0);
+    --button-hover: rgba(42, 42, 42, 0);
+    --on-button: #a4a4a4;
+    --on-button-selected: #f8f8f8;
+    --on-button-hover: #ffffff;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: Poppins, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+a, a:link, footer a:visited, footer a:hover, footer a:active {
+    color: var(--link);
+    text-decoration: unset;
+}
