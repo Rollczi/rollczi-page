@@ -28,7 +28,7 @@ button {
     font-weight: 600;
     color: var(--on-background-primary);
     text-transform: uppercase;
-    padding: 0.9em 2em;
+    padding: 0.8em 2em;
     background: var(--background-primary);
     border: 2px solid var(--on-background-shadow);
     border-radius: 0.75em;

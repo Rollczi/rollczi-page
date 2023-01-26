@@ -4,12 +4,17 @@
             <h1 class="title">
                 I am a <b>Java Developer</b><br/>
                 and passionate <b>Web Designer</b>
+
             </h1>
+
             <p class="subtitle">
-                and ...<br/>
-                I love to create <u>things</u> that are useful and beautiful.
+                I love to create <u>things</u> that are useful and <RainbowText text="beautiful"/>.
             </p>
-            <DrawButton :text="'GitHub'"/>
+            <div class="buttons-container">
+                <DrawButton :text="'GitHub'"/>
+                <DrawButton :text="'Discord'"/>
+            </div>
+
         </div>
         <div class="banner-images">
             <img class="java no-select" src="@/assets/images/banner/java.png" alt="Java icon">
@@ -21,9 +26,10 @@
 
 <script>
 import DrawButton from "@/components/shared/DrawButton";
+import RainbowText from "@/components/shared/RainbowText";
 export default {
     name: "HomePageBanner",
-    components: {DrawButton}
+    components: {RainbowText, DrawButton}
 }
 </script>
 
@@ -58,8 +64,13 @@ export default {
     color: var(--on-background-shadow);
 }
 
-.small-text a {
-    font-weight: 600;
+.buttons-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 2.2rem;
+    gap: 1.2rem;
 }
 
 .banner-images {
