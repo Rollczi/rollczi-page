@@ -47,7 +47,7 @@ export default {
 .base-button:hover {
     background-color: var(--background-secondary);
     transform: translateY(-4px);
-    text-shadow: 0 0 14px var(--text-color-shadow);
+    text-shadow: 0 0 20px var(--text-color-shadow), 0 0 15px var(--text-color-shadow), 0 0 10px var(--text-color-shadow);
     box-shadow: 0 0 13px rgba(236, 227, 208, 0.64), 0 15px 15px rgba(255, 255, 255, 0.09);
 }
 .base-button:active {
