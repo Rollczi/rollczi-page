@@ -1,7 +1,7 @@
 <template>
     <div class="logo" @click="onLogoClick">
         <GitHubIcon
-            :scale="34"
+            :size="34"
             :color="'var(--on-background-secondary)'"
         />
         <h1>Rollczi.dev</h1>
@@ -30,10 +30,11 @@ export default {
     align-items: center;
     user-select: none;
     gap: 1.5em;
-    transition: .3s ease-in-out;
+    transition: .2s ease-in-out;
 }
 
 .logo svg {
+    transition: .4s ease-in-out;
     font-size: 4rem;
 }
 
@@ -44,6 +45,8 @@ export default {
 
 .logo:hover {
     text-shadow: 0 0 0.5em var(--on-background-secondary);
+    transform: translateY(-2px);
+    scale: 1.02;
 }
 
 .logo:hover svg {

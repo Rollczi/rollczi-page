@@ -1,0 +1,42 @@
+.language-java {
+    color: #cccccc;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.8rem;
+    line-height: 1.5;
+}
+
+.language-java .token {
+    color: #cccccc;
+}
+
+.language-java .keyword, .language-java .comma, .language-java .semicolon {
+    color: #de8225;
+}
+
+.language-java .comment {
+    color: #7f7f81;
+}
+
+.language-java .punctuation {
+    color: #989da6;
+}
+
+.language-java .class-name {
+}
+
+.language-java .function {
+}
+
+.language-java .annotation {
+    color: #d3b837;
+}
+
+.language-java .number {
+    color: #5696d5;
+}
+
+.language-java .string {
+    color: #71915b;
+}

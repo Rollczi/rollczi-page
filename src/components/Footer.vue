@@ -1,8 +1,8 @@
 <template>
     <footer>
         <p>All rights reserved &copy; 2023 | <a href="https://github.com/Rollczi"> Rollczi</a></p>
-        <a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons created by Freepik - Flaticon</a>
-        <a href="https://icon-icons.com/icon/intellij/93550" title="intelliJ icons">IntelliJ icon created by icon-icons.com</a>
+<!--        <a href="https://www.flaticon.com/free-icons/java" title="java icons">Java icons created by Freepik - Flaticon</a>-->
+<!--        <a href="https://icon-icons.com/icon/intellij/93550" title="intelliJ icons">IntelliJ icon created by icon-icons.com</a>-->
     </footer>
 </template>
 

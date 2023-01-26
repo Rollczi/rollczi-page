@@ -21,5 +21,6 @@ export default {
 @import "styles/font.css";
 @import "styles/theme.css";
 @import "styles/common.css";
+@import "styles/highlight/highlight.css";
 
 </style>
