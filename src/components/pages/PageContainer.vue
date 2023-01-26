@@ -19,7 +19,7 @@ export default {
     flex-direction: column;
 
     background-color: var(--background-primary);
-    background-image: url("../../assets/images/background/background.svg");
+    background-image: url("@/assets/images/background/background.svg");
     background-repeat: repeat-y;
     background-size: cover;
     color: var(--on-background-primary);

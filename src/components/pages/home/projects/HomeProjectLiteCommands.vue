@@ -5,7 +5,7 @@
         It is designed to be easy to use and easy to implement.
     </p>
 
-    <img src="../../../../assets/images/projects/litecommands/use-case.png">
+    <img src="@/assets/images/projects/litecommands/use-case.png" alt="Example usage of litecommands framework">
 
 </template>
 
