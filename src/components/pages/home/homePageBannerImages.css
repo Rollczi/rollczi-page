@@ -1,7 +1,7 @@
 .banner-images {
     position: relative;
     width: 20%;
-    opacity: 0.8;
+    opacity: 1.0;
     z-index: 0;
 }
 
@@ -31,8 +31,9 @@
     top: 7rem;
     left: 8rem;
     width: 15rem;
-    animation: banner-icon-setup-intellij 0.3s ease-in-out both, up-down 3.5s ease-in-out infinite;
+    animation: banner-icon-setup 0.3s ease-in-out both, up-down 3.5s ease-in-out infinite;
     animation-delay: 800ms;
+    filter: drop-shadow(0 0 1.5rem rgba(0, 0, 0, 0.58));
 }
 
 @keyframes banner-icon-setup {

@@ -1,23 +1,9 @@
 <template>
-    <CodeBlock :language="language"/>
-        <slot/>
-    <CodeBlock/>
+    <CodeBlock :key="renderKey" :language="language" :code="code"/>
 </template>
 
 <script>
-import Prism from 'prismjs';
-import CodeBlock from "@/components/shared/CodeBlock";
-
-function correctHighlight(highlight) {
-    highlight = correctPunctuation(highlight, ',', 'comma');
-    highlight = correctPunctuation(highlight, ';', 'semicolon');
-
-    return highlight;
-}
-
-function correctPunctuation(highlight, punctuation, replacement) {
-    return highlight.replace(new RegExp('<span class="token punctuation">(' + punctuation + ')</span>', 'g'), '<span class="token ' + replacement + '">$1</span>');
-}
+import CodeBlock from "@/components/shared/BaseCodeBlock";
 
 export default {
     name: "AnimatedCodeBlock",
@@ -28,29 +14,44 @@ export default {
             default: 'javascript'
         }
     },
+    data() {
+        return {
+            code: "",
+            renderKey: 0
+        }
+    },
+    methods: {
+        forcesUpdateComponent() {
+            this.renderKey++;
+        }
+    },
     mounted() {
-        // get slot content
         let code = this.$slots.default()[0].children;
+        let charactersCount = 0;
 
-
-        // remove leading spaces
-        let lines = code.split('\n');
-        let minSpace = lines.reduce((min, line) => {
-            if (line.trim() === '') {
-                return min;
+        function changeCount(charactersCount) {
+            if (code[charactersCount] === ' ' && code[charactersCount + 1] === ' ') {
+                return changeCount(charactersCount + 1);
             }
 
-            let space = line.match(/^\s*/)[0].length;
+            return charactersCount;
+        }
 
-            return space < min ? space : min;
-        }, Infinity);
 
-        // remove min space
-        lines = lines.map(line => line.slice(minSpace));
+        setInterval(() => {
+            charactersCount++;
 
-        let highlight = Prism.highlight(lines.join('\n'), Prism.languages[this.language], this.language);
+            charactersCount = changeCount(charactersCount);
 
-        this.$refs.code.innerHTML = correctHighlight(highlight);
+            if (charactersCount > code.length) {
+                clearInterval(this.interval);
+                return;
+            }
+
+            this.code = code.slice(0, charactersCount);
+            this.forcesUpdateComponent();
+
+        }, 50);
     },
 }
 </script>

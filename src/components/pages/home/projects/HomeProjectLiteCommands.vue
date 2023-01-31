@@ -8,7 +8,7 @@
     <h3>
         TODO: design website for LiteCommands
     </h3>
-    <CodeBlock language="java">
+    <AnimatedCodeBlock language="java">
         <pre>
             @Route(name = "hello")
             public class HelloCommand {
@@ -20,12 +20,12 @@
 
             }
         </pre>
-    </CodeBlock>
+    </AnimatedCodeBlock>
 
     <h3>
         Each command is represented by a class, and each method in the class is a command.
     </h3>
-    <CodeBlock language="java">
+    <AnimatedCodeBlock language="java">
         <pre>
             @Permission("my.permission")
             @Route(name = "hello world", aliases = {"hi world", "siema swiecie"})
@@ -33,27 +33,29 @@
 
                 @Async // this command will be executed asynchronously
                 @Execute
-                public void hello(
+                public String hello(
                         @Context Player sender,
                         @Arg int x,
                         @Arg String text,
                         @Flag("-a") boolean isFlagA
                 ) {
+                    int x = 10;
+                    int y = 20;
                     sender.sendMessage("Hello world!");
                     sender.sendMessage("x = %d, text = %s, isFlagA = %b".formatted(x, text, isFlagA));
                 }
 
             }
         </pre>
-    </CodeBlock>
+    </AnimatedCodeBlock>
 
 </template>
 
 <script>
-import CodeBlock from "@/components/shared/CodeBlock";
+import AnimatedCodeBlock from "@/components/shared/AnimatedCodeBlock";
 export default {
     name: "HomeProjectLiteCommands",
-    components: {CodeBlock}
+    components: {AnimatedCodeBlock}
 }
 </script>
 

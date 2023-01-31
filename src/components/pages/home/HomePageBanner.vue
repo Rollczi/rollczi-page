@@ -19,7 +19,7 @@
         <div class="banner-images">
             <img class="java no-select" src="@/assets/images/banner/java.png" alt="Java icon">
             <img class="kotlin no-select" src="@/assets/images/banner/kotlin.png" alt="Kotlin icon">
-            <img class="intellij no-select" src="@/assets/images/banner/intellij.svg" alt="IntelliJ icon">
+            <img class="intellij no-select" src="@/assets/images/banner/litecommands.png" alt="IntelliJ IDEA icon">
         </div>
     </div>
 </template>

@@ -21,10 +21,15 @@
 import Prism from 'prismjs';
 
 function correctHighlight(highlight) {
+    // change function to declaration-function if it is a declaration of java method
+    highlight = highlight.replace(new RegExp('(((<span class="token keyword"> {0,3}(void|int|double|float|byte|short|long|boolean|char) {0,3})|((<span class="token class-name">) {0,3}([a-zA-Z_$][a-zA-Z\\d_$]*\\.)*[a-zA-Z_$][a-zA-Z\\d_$]*)) {0,3}(\\[])* {0,3}<\\/span>) *<span class="token function"> {0,3}(.*) {0,3}<\\/span>', 'g'), '$1 <span class="token declaration-function">$9</span>');
+    // replace generic types with class-name
+    // highlight = highlight.replace(new RegExp(');
+
     highlight = correctPunctuation(highlight, ',', 'comma');
     highlight = correctPunctuation(highlight, ';', 'semicolon');
 
-    return highlight;
+    return highlight + "<span class=\"code-cursor\"></span>";
 }
 
 function correctPunctuation(highlight, punctuation, replacement) {
@@ -37,12 +42,14 @@ export default {
         language: {
             type: String,
             default: 'javascript'
+        },
+        code: {
+            type: String,
+            default: ''
         }
     },
     mounted() {
-        // get slot content
-        let code = this.$slots.default()[0].children;
-
+        let code = this.code;
 
         // remove leading spaces
         let lines = code.split('\n');
@@ -108,4 +115,33 @@ export default {
     padding: 0.2rem 1.2rem 1.2rem 1.2rem;
 }
 
+
+
+</style>
+
+<style>
+.code-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1.2rem;
+    margin-left: 0.1rem;
+    margin-bottom: -0.23rem;
+    background-color: var(--on-background-shadow);
+    animation: code-cursor 1s infinite;
+}
+
+@keyframes code-cursor {
+    0% {
+        opacity: 1;
+    }
+    49% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
 </style>
